@@ -21,7 +21,7 @@ body {
 
 .subtitle {
   font-size: 42px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: monospace;
 }
 
 .intro {
@@ -38,9 +38,11 @@ body {
   margin-left: 15%;
 }
 .header-link {
-  text-decoration: underline;
-  color: black;
-  font-family: 'Courier New', Courier, monospace;
+  text-decoration: double underline;
+  color: blue;
+  font-family: 'Homemade Apple', cursive;
+  transform: rotate(2.5deg);
+  margin-bottom: -10px;
 }
 .main-note-container {
   display: flex;
@@ -123,7 +125,7 @@ text-decoration: underline;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Merienda One', cursive;
+  font-family: monospace;
 }
 .register_credentials {
   height: 30px;
@@ -157,7 +159,7 @@ text-decoration: underline;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Merienda One', cursive;
+  font-family: monospace;
 
 }
 
@@ -176,10 +178,13 @@ text-decoration: underline;
 
 .register_here {
   align-self: center;
+  font-family: 'Homemade Apple';
+
 }
 
 .login_here {
   align-self: center;
+  font-family: 'Homemade Apple';
 }
 
 label {
@@ -194,4 +199,11 @@ label {
   padding: 10px;
   border-radius: 5px;
   background-color: paleturquoise;
+}
+
+.register_login {
+  font-family: monospace;
+  font-size: .75em;
+  align-self: center;
+  display: flex;
 }

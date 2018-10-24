@@ -27,7 +27,7 @@ class Register extends Component {
                         <label>Confirm Password: </label>
                         <input className="register_box" type="password" required/>
                     </div>
-                    <p className="register_here">Already have an account? Log in <Link className="header-link" to='/login'>here</Link></p>
+                    <p className="register_login">{` Already have an account? Log in `} <br/> <Link className="header-link" to='/login'>here</Link></p>
                     <div className="button-submit">Submit</div>
                 </div>
             </div>

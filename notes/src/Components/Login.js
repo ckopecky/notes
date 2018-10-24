@@ -15,7 +15,7 @@ class Login extends Component {
                         <label>Password: </label>
                         <input className="input_box" type="password" required/>
                     </div>
-                    <p className="register_here">No account? Register <Link className="header-link" to='/register'>here</Link></p>
+                    <p className="register_login">No account?  <br/><Link className="header-link" to='/register'>Register here</Link></p>
                     <div className="button-submit">Submit</div>
                 </div>
             </div>
