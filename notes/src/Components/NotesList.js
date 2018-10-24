@@ -40,7 +40,7 @@ class NotesList extends Component {
                             </div>              )
                     })}
                 </div>
-                <div><Link to="/create"><h4 className="create-link">2 + 2 = 5</h4></Link></div>
+                <div><Link to="/create"><h4 className="create-link">Create note</h4></Link></div>
             </div>
         );
     }
