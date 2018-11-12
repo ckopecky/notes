@@ -20,8 +20,8 @@ const password = process.env.PASSWORD;
 //database connection
 mongoose.set('useCreateIndex', true)
 const mongoOptions = {useNewUrlParser: true};
-mongodb://<dbuser>:<dbpassword>@ds063439.mlab.com:63439/notesdb
-mongoose.connect(`mongodb://${users}:${password}@ds063439.mlab.com:63439/notesdb`, mongoOptions)
+//mongodb://<dbuser>:<dbpassword>@ds063439.mlab.com:63439/notesdb
+mongoose.connect(`mongodb://cmvnk:T3mp1234!@ds063439.mlab.com:63439/notesdb`, mongoOptions)
     .then(()=> {
         console.log(`Connected to ${database} on MongoDB`);
     })
