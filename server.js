@@ -53,17 +53,8 @@ const restricted = (req, res, next) => {
 //global
 
 
-
-server.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); //Cross Site Allowance
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-});
-
 const corsOptions = {
     origin: "*",
-    methods: "GET, HEAD, PUT, PATCH, POST, DELETE",
-    optionsSuccessStatus: 204,
     credentials: true
 };
 
