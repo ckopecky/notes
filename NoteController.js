@@ -5,10 +5,7 @@ const Notes = require("./NoteSchema");
 
 const post = (req, res) => { //works
     const { title, body, author } = req.body;
-    if(!title || !body || !author){
-        res.status(401).json({Message: "Note must have title, body, tags, author"})
-    }
-    else{
+    console.log(req.body);
         Notes.create({ title, body, author })
         .then(note => {
             if(!note){
@@ -21,7 +18,6 @@ const post = (req, res) => { //works
         .catch(err => {
             res.status(500).json({Error: "There was an error in saving note", err});
         });
-    }
 };
     
 
