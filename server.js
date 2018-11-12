@@ -35,7 +35,7 @@ mongoose.connect(`mongodb://cmvnk:T3mp1234!@ds063439.mlab.com:63439/notesdb`, mo
 
 const restricted = (req, res, next) => {
     const token = req.headers.authorization;
-    const secret = process.env.SECRET;
+    const secret = "You're a wizard, Harry."
 
     if(token){
         jwt.verify(token, secret, (err, decodedToken) => {
