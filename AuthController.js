@@ -2,7 +2,6 @@ const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const Auths = require("./AuthSchema");
 require("dotenv")
-
 const tokenGenerator = auth => {
     const options = {
         expiresIn: "24h"
@@ -11,8 +10,9 @@ const tokenGenerator = auth => {
     const payload = {
         name: auth.username
     };
+    const secret = "You're a wizard, Harry.";
 
-    const secret = process.env.SECRET;
+
 
     return jwt.sign(payload, secret, options);
 };
@@ -59,7 +59,7 @@ const register = (req, res) => {
                 res.status(201).json({username: auth.username, firstName: auth.firstName, lastName: auth.lastName, token});
             })
             .catch(err => {
-                res.status(500).json({ Error: err.message });
+                res.status(500).json({ "Error from register catch" : err.message });
             });
     }
 };
