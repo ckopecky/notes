@@ -52,11 +52,7 @@ const restricted = (req, res, next) => {
 
 //global
 
-const corsOptions = {
-    origin: "*",
-    methods: "GET, HEAD, PUT, PATCH, POST, DELETE",
-    optionsSuccessStatus: 204
-};
+
 
 server.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*'); //Cross Site Allowance
@@ -64,6 +60,14 @@ server.use((req, res, next) => {
     next();
 });
 
+const corsOptions = {
+    origin: "*",
+    methods: "GET, HEAD, PUT, PATCH, POST, DELETE",
+    optionsSuccessStatus: 204,
+    credentials: true
+};
+
+server.options('*', cors(corsOptions))
 server.use(express.json());
 server.use(cors(corsOptions));
 server.use(helmet());
