@@ -37,8 +37,9 @@ const authenticate = (req, res, next) => {
     // You won't need to change anything in this file here.
     const token = req.headers.authorization;
     console.log("get token", token)
-    const mysecret = "You're a wizard, Harry";
+    const mysecret = "You're a wizard, Harry.";
     if (token) { //token authentication on server side
+        console.log(token);
         jwt.verify(token, mysecret, (err, decodedToken) => {
         console.log("decoded Token", decodedToken);
         if(err){
