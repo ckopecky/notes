@@ -33,23 +33,26 @@ mongoose.connect(`mongodb://cmvnk:T3mp1234!@ds063439.mlab.com:63439/notesdb`, mo
 
 //local
 
-const restricted = (req, res, next) => {
+const authenticate = (req, res, next) => {
+    // You won't need to change anything in this file here.
     const token = req.headers.authorization;
-    const secret = "You're a wizard, Harry."
+    console.log("get token", token)
+    
+    if (token) { //token authentication on server side
+        jwt.verify(token, mysecret, (err, decodedToken) => {
+        console.log("decoded Token", decodedToken);
+        if(err){
+            return res
+                .status(401)
+                .json({ message: 'you shall not pass! not decoded' });
+        }
 
-    if(token){
-        jwt.verify(token, secret, (err, decodedToken) => {
-            if(err) {
-                return res.status(401).json({Message: "Token was not decoded", err});
-            }
-            next();
-        });
+        next();
+    });
+    } else {
+    res.status(401).json({ message: 'you shall not pass! no token' });
     }
-    else {
-        res.send({Message: "Error in retrieving token"});
-    }
-};
-
+}
 //global
 
 
@@ -67,7 +70,7 @@ server.get("/", (req, res) => {
     res.send({Success: "api is working..."});
 });
 
-server.use("/api/notes/", restricted, noteController);
+server.use("/api/notes/", authenticate, noteController);
 server.use("/auth/", authController);
 
 

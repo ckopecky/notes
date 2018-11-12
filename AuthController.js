@@ -56,7 +56,7 @@ const register = (req, res) => {
         Auths.create(req.body)
             .then(auth => {
                 const token = tokenGenerator(auth);
-                res.status(201).json({username: auth.username, firstName: auth.firstName, lastName: auth.lastName, token});
+                res.status(201).json({username: auth.username, firstName: auth.firstName, lastName: auth.lastName, password: auth.password,headers: { Authentication: token }});
             })
             .catch(err => {
                 res.status(500).json({ "Error from register catch" : err.message });

@@ -24,11 +24,9 @@ const post = (req, res) => { //works
 const get = (req, res) => { //works
     Notes.find()
         .then(notes => {
-            if(notes.length===0){
-                res.status(404).json({Message: "notes not found"})
-            } else {
+            console.log(notes);
+        
                 res.status(200).json(notes);
-            }
         })
         .catch(err => {
             res.status(500).json({Error: "There was an error in retrieving notes", err});
