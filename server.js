@@ -55,7 +55,6 @@ const restricted = (req, res, next) => {
 const corsOptions = {
     origin: "*",
     methods: "GET, HEAD, PUT, PATCH, POST, DELETE",
-    preflightContinue: false,
     optionsSuccessStatus: 204
 };
 
