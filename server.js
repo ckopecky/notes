@@ -54,8 +54,9 @@ const restricted = (req, res, next) => {
 
 
 const corsOptions = {
-    origin: "*",
-    credentials: true
+    "origin": "*",
+    credentials: true,
+    "preflightContinue": false,
 };
 
 server.options('*', cors(corsOptions))
