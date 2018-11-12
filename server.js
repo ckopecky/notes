@@ -13,12 +13,15 @@ const helmet = require("helmet");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const database = "notesdb";
+const users = process.env.USERS;
+const password = process.env.PASSWORD;
+
 
 //database connection
 mongoose.set('useCreateIndex', true)
 const mongoOptions = {useNewUrlParser: true};
-
-mongoose.connect(`mongodb://localhost:27017/${database}`, mongoOptions)
+mongodb://<dbuser>:<dbpassword>@ds063439.mlab.com:63439/notesdb
+mongoose.connect(`mongodb://${users}:${password}@ds063439.mlab.com:63439/notesdb`, mongoOptions)
     .then(()=> {
         console.log(`Connected to ${database} on MongoDB`);
     })
