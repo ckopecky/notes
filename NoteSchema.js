@@ -2,6 +2,7 @@
 
 
 const mongoose = require("mongoose");
+var ObjectId = mongoose.Schema.Types.ObjectId;
 
 const noteDefinition = {
     title: {
@@ -15,7 +16,7 @@ const noteDefinition = {
         required: true,
     },
     author: {
-        type: String,
+        type: ObjectId,
         required: true,
     },
 
